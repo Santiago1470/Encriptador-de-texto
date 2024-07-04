@@ -1,4 +1,4 @@
-# Encriptador-de-texto
+# Encriptador de texto
 Este proyecto fue desarrollado para el programa educativo de Oracle ONE en la plataforma de Alura para el curso de Principiante en Programación G7 - ONE, donde se vieron las tecnologías HTML, CSS y el lenguaje de programación JavaScript. El proyecto desarrollado tiene como objetivo recibir un texto dado por el usuario y encriptarlo de acuerdo con las "llaves" que se especifican más abajo de este README, también es capaz de desencriptar el texto encriptado que se le indique o volver a encriptar el texto encriptado, además, el sitio web se adapta a cualquier dispositivo que sea usado para acceder a él.
 
 ## Descripción del desafío
