@@ -1,0 +1,15 @@
+
+.contenedor-infoPagina {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.contenedor-infoPagina img {
+    width: 60px;
+}
+
+.seccion-entrada {
+    display: flex;
+    flex-direction: column;
+}
