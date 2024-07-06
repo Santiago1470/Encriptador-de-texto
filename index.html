@@ -14,19 +14,20 @@
     <main>
         <section class="seccion-entrada">
             <div class="contenedor-titulo">
+                <img src="imagenes/icono-alerta.png" alt="Logo error">
                 <p>Formato incorrecto</p>
             </div>
             <div class="contenedor-texto">
-                <textarea name="" id="txta-entrada"></textarea>
+                <textarea name="" id="txta-entrada" placeholder="Ingrese el texto aquí" class="txtArea-principal"></textarea>
             </div>
         </section>
         <section class="seccion-botones">
-            <input type="button" value="ENCRIPTAR">
-            <input type="button" value="DESENCRIPTAR">
+            <input id="btn-encriptar" type="button" value="ENCRIPTAR">
+            <input id="btn-desencriptar" class="btn-secundario" type="button" value="DESENCRIPTAR">
         </section>
         <section class="seccion-resultado">
-            <textarea name="" id="txta-resultado"></textarea>
-            <input type="button" value="COPIAR">
+            <textarea name="" id="txta-resultado" class="txtArea-principal" readonly></textarea>
+            <input id="btn-copiar" class="btn-secundario" type="button" value="COPIAR">
         </section>
     </main>
     <footer class="contenedor-infoCreador">
