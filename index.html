@@ -8,22 +8,22 @@
 </head>
 <body>
     <header class="contenedor-infoPagina">
-        <img src="imagenes/img-logo.png" alt="Logo del sitio web">
+        <!-- <img src="imagenes/img-logo.png" alt="Logo del sitio web"> -->
         <h1>Encriptador de texto</h1>
     </header>
+    <div class="contenedor-error">
+        <img src="imagenes/icono-alerta.png" alt="Logo error">
+        <p>Formato incorrecto</p>
+    </div>
     <main>
         <section class="seccion-entrada">
-            <div class="contenedor-titulo">
-                <img src="imagenes/icono-alerta.png" alt="Logo error">
-                <p>Formato incorrecto</p>
-            </div>
             <div class="contenedor-texto">
                 <textarea name="" id="txta-entrada" placeholder="Ingrese el texto aquí" class="txtArea-principal"></textarea>
             </div>
-        </section>
-        <section class="seccion-botones">
-            <input id="btn-encriptar" type="button" value="Encriptar">
-            <input id="btn-desencriptar" class="btn-secundario" type="button" value="Desencriptar">
+            <section class="seccion-botones">
+                <input id="btn-encriptar" type="button" value="Encriptar">
+                <input id="btn-desencriptar" class="btn-secundario" type="button" value="Desencriptar">
+            </section>
         </section>
         <section class="seccion-resultado">
             <!-- <textarea name="" id="txta-resultado" class="txtArea-principal" readonly></textarea> -->
@@ -38,5 +38,7 @@
         <h5>Desarrollado por Santiago Jair Torres Rivera</h5>
         <p>© 2024</p>
     </footer>
+    <canvas width="0" height="0" id="canv" />
+    <script src="js/matrixEffect.js"></script>
 </body>
 </html>
