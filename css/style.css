@@ -104,8 +104,8 @@ main {
 /* --------------------- MENSAJE DE ERROR --------------------- */
 
 .contenedor-error {
-    /* position: relative;
-    left: -40%; */
+    position: relative;
+    left: -530px;
     display: flex;
     flex-direction: row;
     padding-left: 10px;
