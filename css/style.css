@@ -149,7 +149,8 @@ main {
     width: 100%;
     min-height: 160px;
     height: 300px;
-    overflow-y: hidden;
+    overflow-y: auto;
+    /* overflow-y: hidden; */
     border: 1px solid rgb(160, 160, 160);
     /* border: 2px solid rgb(32, 29, 29); */
     /* border: none; */
@@ -166,6 +167,10 @@ main {
     background-color: var(--fondo-cards);
     /* background-color: rgba(255, 255, 255, 0.823); */
     /* background-color: rgba(255, 255, 255, 0.714); */
+    /* scrollbar-width: thin;
+    scrollbar-color: rgb(0, 0, 0) var(--fondo-cards); */
+    scrollbar-width: thin;
+    scrollbar-color: #8b4116 rgba(44, 44, 44, 0);
 }
 
 .txtArea-principal:focus {
@@ -232,10 +237,12 @@ main {
 
 .seccion-resultado {
     width: 50%;
+    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    overflow: hidden;
 }
 
 .contenedor-resultado {
@@ -284,8 +291,10 @@ main {
 .contenedor-textoSalida {
     display: none;
     text-align: left;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow: auto;
 }
-
 
 /* --------------------- FOOTER --------------------- */
 
