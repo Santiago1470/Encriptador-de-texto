@@ -129,13 +129,6 @@ function validarTexto() {
     }
 }
 
-// let verificarEstadoError = setInterval(() => {
-//     let pixeles = contenedorError.getBoundingClientRect().x;
-//     if(pixeles >= -530 && txtaEntrada.value == ""){
-//         ocultarError();
-//     }
-// }, 1500);
-
 var contenedorError = document.getElementById('contenedorError');
 var errorAbierto = false;
 
