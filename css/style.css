@@ -2,18 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 :root {
-    /* --sombra-btn-secundario: inset 0px 0px 7px 2px rgb(50, 50, 50);  */
     --sombra-btn-secundario: inset 0px 0px 10px 5px rgb(0, 0, 0);
     --color-texto-secundario: rgb(68, 68, 68);
-    /* --fondo-btn-secundario: rgb(212, 212, 212); */
     --fondo-btn-secundario: rgb(65, 78, 218);
     --fondo-cards: rgba(247, 242, 242, 0.866);
     --fondo-azul-espacial: rgb(0, 12, 57);
 }
 
 * {
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-    /* font-family: "Roboto", sans-serif; */
     font-family: "Quicksand", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -54,15 +50,6 @@ main {
 /* --------------------- HEADER --------------------- */
 
 .contenedor-infoPagina div {
-    /* background-image: url(../imagenes/img-rectangulo-titulo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-clip: content-box; */
-    /* width: 400px;
-    height: 120px;
-    position: relative;
-    margin: 0px auto;
-    display: flex; */
     display: flex;
     width: 350px;
     height: 60px;
@@ -101,7 +88,6 @@ main {
     padding-right: 10px;
     background-color: rgba(204, 0, 0, 0.89);
     width: fit-content;
-    /* border: 1px solid rgb(72, 72, 72); */
     border-left: none;
     border-radius: 5px;
     border-top-left-radius: 0px;
@@ -116,13 +102,11 @@ main {
 }
 
 .contenedor-error ul {
-    /* margin: auto 0px auto 5px; */
-    /* color: rgb(211, 0, 0); */
-    /* color: rgb(255, 83, 83); */
     color: white;
     font-weight: bold;
     font-size: 0.95rem;
     padding-left: 20px;
+    margin: auto;
 }
 
 
@@ -139,25 +123,14 @@ main {
     min-height: 160px;
     height: 300px;
     overflow-y: auto;
-    /* overflow-y: hidden; */
     border: 1px solid rgb(160, 160, 160);
-    /* border: 2px solid rgb(32, 29, 29); */
-    /* border: none; */
     border-radius: 10px;
     resize: none;
     box-sizing: border-box;
     padding: 10px;
-    /* box-shadow: 0px 0px 10px 4px rgb(227, 227, 227); */
-    /* box-shadow: 0px 0px 10px 4px rgba(212, 163, 4, 0.722); */
     box-shadow: 0px 0px 10px 4px rgba(212, 163, 4, 0.722);
     font-size: 1.1rem;
-    /* background-color: rgb(247, 242, 242); */
-    /* background-color: rgba(247, 242, 242, 0.866); */
     background-color: var(--fondo-cards);
-    /* background-color: rgba(255, 255, 255, 0.823); */
-    /* background-color: rgba(255, 255, 255, 0.714); */
-    /* scrollbar-width: thin;
-    scrollbar-color: rgb(0, 0, 0) var(--fondo-cards); */
     scrollbar-width: thin;
     scrollbar-color: #8b4116 rgba(44, 44, 44, 0);
 }
@@ -166,10 +139,6 @@ main {
     outline: none;
     border: 2px solid rgb(215, 215, 215);
 }
-
-/* .txtArea-principal::placeholder {
-    color: white;
-} */
 
 
 /* --------------------- SECCION BOTONES --------------------- */
@@ -187,12 +156,10 @@ main {
     height: 40px;
     border-radius: 10px;
     border: 1px solid gray;
-    /* box-shadow: 0px 4px 5px rgb(28, 28, 28); */
     transition: all ease 100ms;
 }
 
 .btn-primario {
-    /* background-color: #1156ab; */
     background-color: #ab4911;
     color: white;
     background-image: url(../imagenes/btn-naranja.png);
@@ -201,7 +168,6 @@ main {
 }
 
 .btn-primario:active {
-    /* box-shadow: inset 0px 0px 7px 2px rgb(151, 151, 151); */
     box-shadow: inset 0px 0px 7px 2px rgb(0, 0, 0);
     color: rgb(127, 127, 127);
     font-size: 0.8rem;
@@ -235,13 +201,10 @@ main {
 }
 
 .contenedor-resultado {
-    /* background-color: rgba(255, 255, 255, 0.823); */
-    /* background-color: rgb(247, 242, 242); */
     background-color: var(--fondo-cards);
 }
 
 .contenedor-notFound {
-    /* display: none; */
     text-align: center;
     height: 100%;
 }
@@ -250,7 +213,6 @@ main {
     margin: 0px 0px 10px 0px;
     font-size: 1.1rem;
     font-weight: bold;
-    /* color: rgb(255, 255, 255); */
 }
 
 .img-vacio {
@@ -266,7 +228,6 @@ main {
 .seccion-botones-salida input {
     border-radius: 10px;
     border: 1px solid gray;
-    /* box-shadow: 0px 4px 5px rgb(28, 28, 28); */
     margin-top: 5px;
     width: 90px;
     height: 40px;
@@ -358,7 +319,6 @@ main {
     .seccion-entrada,
     .seccion-resultado {
         padding: 0px 0px;
-        /* margin-top: 10px; */
         width: 100%;
     }
 
