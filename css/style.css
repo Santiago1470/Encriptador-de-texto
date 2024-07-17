@@ -27,6 +27,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 
@@ -295,6 +296,31 @@ main {
     word-wrap: break-word;
     overflow: auto;
 }
+
+/* --------------------- MENSAJE DE TEXTO COPIADO --------------------- */
+
+
+.contenedor-copiado {
+    position: absolute;
+    right: -280px;
+    bottom: 10%;
+    background-color: rgba(0, 128, 0, 0.767);
+    width: fit-content;
+    padding: 15px;
+    border: 1px solid rgb(0, 109, 0);
+    border-right: none;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.contenedor-copiado p {
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin: 0px;
+    color: white;
+}
+
 
 /* --------------------- FOOTER --------------------- */
 
