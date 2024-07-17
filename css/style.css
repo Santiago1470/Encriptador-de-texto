@@ -3,7 +3,7 @@
 
 :root {
     /* --sombra-btn-secundario: inset 0px 0px 7px 2px rgb(50, 50, 50);  */
-    --sombra-btn-secundario: inset 0px 0px 10px 5px rgb(0, 0, 0); 
+    --sombra-btn-secundario: inset 0px 0px 10px 5px rgb(0, 0, 0);
     --color-texto-secundario: rgb(68, 68, 68);
     /* --fondo-btn-secundario: rgb(212, 212, 212); */
     --fondo-btn-secundario: rgb(65, 78, 218);
@@ -28,6 +28,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     overflow-x: hidden;
+    width: 100%;
 }
 
 
@@ -41,14 +42,6 @@ main {
 
 
 /* --------------------- HEADER --------------------- */
-
-.contenedor-infoPagina {
-    /* display: flex;
-    flex-direction: row;
-    gap: 10px; */
-    /* color: white;
-    text-align: center; */
-}
 
 .contenedor-infoPagina div {
     /* background-image: url(../imagenes/img-rectangulo-titulo.png);
@@ -77,25 +70,10 @@ main {
     text-align: center;
 }
 
-.contenedor-infoPagina img {
-    /* width: 70px;
-    height: 70px; */
-    /* width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1; */
-}
-
 /* --------------------- SECCIONES PRINCIPALES --------------------- */
 
-/* ,
- .seccion-botones
-*/
-
 .seccion-entrada,
-  .seccion-resultado {
+.seccion-resultado {
     padding: 0px 20px;
     margin-top: 10px;
     width: 50%;
@@ -207,7 +185,7 @@ main {
     /* background-color: #1156ab; */
     background-color: #ab4911;
     color: white;
-    background-image: url(../imagenes/btn-naranja3.png);
+    background-image: url(../imagenes/btn-naranja.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -222,7 +200,7 @@ main {
 .btn-secundario {
     background-color: var(--fondo-btn-secundario);
     color: white;
-    background-image: url(../imagenes/btn-azul3.png);
+    background-image: url(../imagenes/btn-azul.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -301,6 +279,7 @@ main {
 
 
 .contenedor-copiado {
+    display: none;
     position: absolute;
     right: -280px;
     bottom: 10%;
@@ -345,4 +324,45 @@ main {
     margin: 0px;
     font-size: 0.8rem;
     font-weight: bold;
+}
+
+@media (max-width: 1440px) {
+
+    /* --------------------- MAIN --------------------- */
+
+    main {
+        padding: 0px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --------------------- MAIN --------------------- */
+
+    main {
+        flex-direction: column;
+
+    }
+
+
+    /* --------------------- SECCIONES PRINCIPALES --------------------- */
+
+    .seccion-entrada,
+    .seccion-resultado {
+        padding: 0px 0px;
+        /* margin-top: 10px; */
+        width: 100%;
+    }
+
+    .seccion-resultado {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    /* --------------------- MAIN --------------------- */
+
+    main {
+        padding: 10px;
+        width: 100%;
+    }
 }

@@ -21,6 +21,10 @@ var btnCopiar = document.querySelector("#btn-copiar");
 btnCopiar.addEventListener('click', copiar);
 
 function encriptar() {
+    if(!textoValido) {
+        return;
+    }
+
     let textoEntrada = txtaEntrada.value;
     let letras = textoEntrada.split('');
     let resultado = '';
@@ -29,12 +33,21 @@ function encriptar() {
         resultado += (llaves.has(p)) ? llaves.get(p) : p;
     });
 
-    containerNotFound.style.display = 'none';
-    txtaResultado.style.display = 'block';
-    txtaResultado.innerHTML = resultado;
+    if(textoEntrada != "") {
+        containerNotFound.style.display = 'none';
+        txtaResultado.style.display = 'block';
+        txtaResultado.innerHTML = resultado;
+    } else {
+        containerNotFound.style.display = 'block';
+        txtaResultado.style.display = 'none';
+    }
 }
 
 function desencriptar() {
+    if(!textoValido) {
+        return;
+    }
+
     let textoEntrada = txtaEntrada.value;
     let letras = textoEntrada.split(' ');
     let resultado = '';
@@ -47,9 +60,14 @@ function desencriptar() {
         resultado += p + " ";
     });
 
-    containerNotFound.style.display = 'none';
-    txtaResultado.style.display = 'block';
-    txtaResultado.innerHTML = resultado;
+    if(textoEntrada != "") {
+        containerNotFound.style.display = 'none';
+        txtaResultado.style.display = 'block';
+        txtaResultado.innerHTML = resultado;
+    } else {
+        containerNotFound.style.display = 'block';
+        txtaResultado.style.display = 'none';
+    }
 }
 
 function copiar() {
@@ -61,8 +79,13 @@ function copiar() {
     selection.addRange(range);
 
     navigator.clipboard.writeText(selection.toString()).then(() => {
-        mostrarCopiar();
-        setTimeout(ocultarCopiar, 1500);
+        if(!copiadoAbierto){
+            mostrarCopiar();
+            setTimeout(ocultarCopiar, 1500);
+            setTimeout(() => {
+                contenedorCopiado.style.display = 'none';
+            }, 2000);
+        }
     }).catch(err => {
         console.error('Error al copiar: ', err);
     });
@@ -77,7 +100,44 @@ function limpiar() {
     txtaEntrada.value = '';
 }
 
-var contenedorError = document.getElementById('contendorError');
+txtaEntrada.addEventListener('input', () => {
+    validarTexto();
+});
+var textoValido = true;
+
+function validarTexto() {
+    console.log("incluye borrado")
+    let texto = txtaEntrada.value;
+    const regex = /^[a-z\s]+$/;
+
+    if(texto.length == 0){
+        if(errorAbierto){
+            ocultarError();
+        }
+        return;
+    }
+    textoValido = regex.test(texto);
+    if(!textoValido){
+        if(!errorAbierto){
+            mostrarError();
+        }
+    } else {
+        let pixeles = contenedorError.getBoundingClientRect().x;
+        if(errorAbierto || (pixeles >= -530)){
+            ocultarError();
+        }
+    }
+}
+
+// let verificarEstadoError = setInterval(() => {
+//     let pixeles = contenedorError.getBoundingClientRect().x;
+//     if(pixeles >= -530 && txtaEntrada.value == ""){
+//         ocultarError();
+//     }
+// }, 1500);
+
+var contenedorError = document.getElementById('contenedorError');
+var errorAbierto = false;
 
 function mostrarError() {
     let pixeles = -530;
@@ -86,6 +146,7 @@ function mostrarError() {
         // console.log(pixeles);
         contenedorError.style.left = `${pixeles}px`;
     }, 8);
+    errorAbierto = true;
 }
 
 function ocultarError() {
@@ -95,17 +156,21 @@ function ocultarError() {
         // console.log(pixeles);
         contenedorError.style.left = `${pixeles}px`;
     }, 8);
+    errorAbierto = false;
 }
 
 var contenedorCopiado = document.getElementById("contenedorCopiado");
+var copiadoAbierto = false;
 
 function mostrarCopiar() {
+    contenedorCopiado.style.display = 'block';
     let pixeles = contenedorCopiado.getBoundingClientRect();
     pixeles = Math.ceil(window.innerWidth - pixeles.right);
     let mover = setInterval(() => {
         pixeles += (pixeles < 0) ? 5 : clearInterval(mover);
         contenedorCopiado.style.right = `${pixeles}px`;
     }, 8);
+    copiadoAbierto = true;
 }
 
 function ocultarCopiar() {
@@ -115,4 +180,5 @@ function ocultarCopiar() {
         pixeles += (pixeles > -280) ? -5 : clearInterval(mover);
         contenedorCopiado.style.right = `${pixeles}px`;
     }, 8);
+    copiadoAbierto = false;
 }

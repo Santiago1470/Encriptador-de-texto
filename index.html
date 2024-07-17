@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="es-mx">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header class="contenedor-infoPagina">
-        <!-- <img src="imagenes/img-logo.png" alt="Logo del sitio web"> -->
-        <!-- <img src="imagenes/icono-astronauta-sinfondo.png" alt="Logo del sitio web"> -->
-         <div>
-            <!-- <img src="imagenes/img-rectangulo-titulo.png" alt=""> -->
+        <div>
             <h1>Encriptador de texto</h1>
-         </div>
+        </div>
     </header>
-    <div id="contendorError" class="contenedor-error">
-        <!-- <img src="imagenes/icono-alerta.png" alt="Logo error"> -->
-        <img src="imagenes/icono-error2.png" alt="Logo error">
+    <div id="contenedorError" class="contenedor-error">
+        <img src="imagenes/icono-error.png" alt="Logo error">
         <ul>
             <li>Solo se aceptan letras minúsculas</li>
             <li>NO se aceptan letras con acentos ni caracteres especiales</li>
@@ -26,7 +24,8 @@
     <main>
         <section class="seccion-entrada">
             <div class="contenedor-texto">
-                <textarea name="" id="txta-entrada" placeholder="Ingrese el texto aquí" class="txtArea-principal"></textarea>
+                <textarea id="txta-entrada" placeholder="Ingrese el texto aquí"
+                    class="txtArea-principal"></textarea>
             </div>
             <section class="seccion-botones-entrada">
                 <input id="btn-encriptar" class="btn-primario" type="button" value="Encriptar">
@@ -37,7 +36,7 @@
             <!-- <textarea name="" id="txta-resultado" class="txtArea-principal" readonly></textarea> -->
             <div class="contenedor-resultado txtArea-principal">
                 <div id="txta-resultado" class="contenedor-textoSalida">
-                    
+
                 </div>
                 <div id="container-notFound" class="contenedor-notFound">
                     <img class="img-vacio" src="/imagenes/img-cohete-sin-fondo.png" alt="Ningún mensaje encontrado">
@@ -61,4 +60,5 @@
     </footer>
     <script src="js/script.js"></script>
 </body>
+
 </html>
