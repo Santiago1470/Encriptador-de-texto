@@ -108,7 +108,7 @@ var textoValido = true;
 function validarTexto() {
     console.log("incluye borrado")
     let texto = txtaEntrada.value;
-    const regex = /^[a-z\s]+$/;
+    const regex = /^[a-zñ\s]+$/;
 
     if(texto.length == 0){
         if(errorAbierto){
