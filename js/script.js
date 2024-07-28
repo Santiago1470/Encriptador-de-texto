@@ -5,19 +5,19 @@ llaves.set('a', 'ai');
 llaves.set('o', 'ober');
 llaves.set('u', 'ufat');
 
-var txtaEntrada = document.getElementById('txta-entrada');
+const txtaEntrada = document.getElementById('txta-entrada');
 
-var btnEncriptar = document.querySelector("#btn-encriptar");
+const btnEncriptar = document.querySelector("#btn-encriptar");
 btnEncriptar.addEventListener("click", encriptar);
 
-var btnDesencriptar = document.querySelector('#btn-desencriptar');
+const btnDesencriptar = document.querySelector('#btn-desencriptar');
 btnDesencriptar.addEventListener("click", desencriptar);
 
-var txtaResultado = document.getElementById('txta-resultado');
-var containerNotFound = document.querySelector('#container-notFound');
-var btnLimpiar = document.querySelector('#btn-limpiar');
+const txtaResultado = document.getElementById('txta-resultado');
+const containerNotFound = document.querySelector('#container-notFound');
+const btnLimpiar = document.querySelector('#btn-limpiar');
 btnLimpiar.addEventListener('click', limpiar);
-var btnCopiar = document.querySelector("#btn-copiar");
+const btnCopiar = document.querySelector("#btn-copiar");
 btnCopiar.addEventListener('click', copiar);
 
 function encriptar() {
@@ -56,6 +56,19 @@ function desencriptar() {
         for (let [clave, valor] of llaves.entries()) {
             let regex = new RegExp(`${valor}`, "g");
             p = p.replace(regex, clave)
+
+            // Manual, pero menos eficiente
+            // let size = valor.length;
+            // let l = "";
+            // for(let i = 0; i < p.length; i++){
+            //     if(valor == p.slice(i, (i + size)) && (i + size) != (p.length + 1)){
+            //         l += clave;
+            //         i = i + size - 1;
+            //         continue;
+            //     }
+            //     l += p[i];
+            // }
+            // p = l;
         }
         resultado += p + " ";
     });
@@ -82,9 +95,6 @@ function copiar() {
         if(!copiadoAbierto){
             mostrarCopiar();
             setTimeout(ocultarCopiar, 1500);
-            setTimeout(() => {
-                contenedorCopiado.style.display = 'none';
-            }, 2000);
         }
     }).catch(err => {
         console.error('Error al copiar: ', err);
@@ -103,10 +113,9 @@ function limpiar() {
 txtaEntrada.addEventListener('input', () => {
     validarTexto();
 });
-var textoValido = true;
+let textoValido = true;
 
 function validarTexto() {
-    console.log("incluye borrado")
     let texto = txtaEntrada.value;
     const regex = /^[a-zñ\s]+$/;
 
@@ -129,8 +138,8 @@ function validarTexto() {
     }
 }
 
-var contenedorError = document.getElementById('contenedorError');
-var errorAbierto = false;
+const contenedorError = document.getElementById('contenedorError');
+let errorAbierto = false;
 
 function mostrarError() {
     let pixeles = -530;
@@ -152,11 +161,10 @@ function ocultarError() {
     errorAbierto = false;
 }
 
-var contenedorCopiado = document.getElementById("contenedorCopiado");
-var copiadoAbierto = false;
+const contenedorCopiado = document.getElementById("contenedorCopiado");
+let copiadoAbierto = false;
 
 function mostrarCopiar() {
-    contenedorCopiado.style.display = 'block';
     let pixeles = contenedorCopiado.getBoundingClientRect();
     pixeles = Math.ceil(window.innerWidth - pixeles.right);
     let mover = setInterval(() => {

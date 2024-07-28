@@ -251,7 +251,6 @@ main {
 
 
 .contenedor-copiado {
-    display: none;
     position: fixed;
     right: -280px;
     bottom: 10%;
