@@ -117,7 +117,7 @@ let textoValido = true;
 
 function validarTexto() {
     let texto = txtaEntrada.value;
-    const regex = /^[a-zñ\s]+$/;
+    const regex = /^[a-zñ\s0-9]+$/;
 
     if(texto.length == 0){
         if(errorAbierto){
